@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.palette.common.white,
             backgroundColor: theme.palette.primary.main,
         },
-    })
+    }),
 );
 
 export default function Image({ image, name }: Props): ReactElement {

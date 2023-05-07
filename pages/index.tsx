@@ -1,10 +1,12 @@
 import { GetServerSideProps } from 'next';
 import { Typography, Theme, List, Grid } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
-import Layout from '../components/layout';
+
+// import Layout from '../components/layout';
 import ListItem, { Link } from '../components/list/ListItem';
 
 import { tools } from '../lib/tools';
+import Layout from '~/components/layout';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -33,31 +35,29 @@ export default function Home({ tools }: Props) {
     const classes = useStyles();
 
     return (
-        <>
-            <Layout title="Next.js example">
-                <Grid container spacing={4} direction="column" className={classes.root}>
-                    <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
-                        <Grid container item alignContent="center" justifyContent="center">
-                            <Typography variant="h5" component="h2">
-                                Tools
-                            </Typography>
-                        </Grid>
-                        <Grid item container justifyContent="center">
-                            <List aria-label={tools.join(', ')} className={classes.list}>
-                                {tools.map(({ name, image, more }) => {
-                                    const link: Link = {
-                                        href: more || '/tool/[name]',
-                                        as: more || `/tool/${name}`,
-                                        label: 'Learn More',
-                                    };
-                                    return <ListItem key={name} name={name} image={image} link={link} />;
-                                })}
-                            </List>
-                        </Grid>
+        <Layout>
+            <Grid container spacing={4} direction="column" className={classes.root}>
+                <Grid item container spacing={4} direction="column" xs={12} alignItems="center">
+                    <Grid container item alignContent="center" justifyContent="center">
+                        <Typography variant="h5" component="h2">
+                            Tools
+                        </Typography>
+                    </Grid>
+                    <Grid item container justifyContent="center">
+                        <List aria-label={tools.join(', ')} className={classes.list}>
+                            {tools.map(({ name, image, more }) => {
+                                const link: Link = {
+                                    href: more || '/tool/[name]',
+                                    as: more || `/tool/${name}`,
+                                    label: 'Learn More',
+                                };
+                                return <ListItem key={name} name={name} image={image} link={link} />;
+                            })}
+                        </List>
                     </Grid>
                 </Grid>
-            </Layout>
-        </>
+            </Grid>
+        </Layout>
     );
 }
 

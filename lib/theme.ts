@@ -8,8 +8,31 @@ declare module '@mui/material/styles/createTypography' {
         fontWeightHeavy: number;
     }
 }
+type CustomTheme = {
+    [Key in keyof typeof themeColors]: typeof themeColors[Key];
+};
+declare module '@mui/material/styles/createTheme' {
+    interface Theme extends CustomTheme {
+        delpikye?: string;
+    }
+    // @ts-ignore
+    interface ThemeOptions extends CustomTheme {
+        delpikye?: string;
+    }
+}
+const themeColors = {
+    plColor: {
+        baseColor: '#231F20',
+        primaryColor: '#FDC600',
+        whiteColor: '#FFFFFF',
+        borderColor: '#979797',
+    },
+};
+
+// #231F20
 
 const THEME: ThemeOptions = {
+    ...themeColors,
     typography: {
         fontFamily: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'].join(','),
         fontWeightLight: 100,
@@ -51,8 +74,10 @@ const THEME: ThemeOptions = {
         },
     },
     palette: {
-        primary: { main: '#016848', dark: '#1f5849', light: '#388e3c' },
-        secondary: { main: '#8bc34a', dark: '#689f38', light: '#d0df63' },
+        // primary: { main: '#231F20' },
+        // secondary: { main: '#8bc34a', dark: '#689f38', light: '#d0df63' },
+        // primary: { main: '#016848', dark: '#1f5849', light: '#388e3c' },
+        // secondary: { main: '#8bc34a', dark: '#689f38', light: '#d0df63' },
         contrastThreshold: 3,
         tonalOffset: 0.5,
     },

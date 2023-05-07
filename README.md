@@ -1,8 +1,21 @@
 # Next, TypeScript, Material UI quality checking project
 
-Includes TypeScript, Material UI, ESLint, Jest, and React Testing Library
+##### Template decription:
+- React 17
+- NextJS / TypeScript
+- MUI v5
+- Testing
+- I18n
+- Alias
+- Redux toolkit
+- ESLint
+- Prettier
+
+<br />
+
 
 - [Next, TypeScript, Material UI quality checking project](#next-typescript-material-ui-quality-checking-project)
+        - [Template decription:](#template-decription)
   - [Deploy your own](#deploy-your-own)
   - [How to use](#how-to-use)
   - [Scripts](#scripts)

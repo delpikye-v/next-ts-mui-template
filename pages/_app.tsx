@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
+// import { I18nextProvider } from 'react-i18next';
+import { Provider } from 'react-redux';
 import { AppProps } from 'next/app';
+
 import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
-import { Provider } from 'react-redux';
+import '~/utils/i18n';
 import theme from '~/lib/theme';
 import { store } from '../store';
 
